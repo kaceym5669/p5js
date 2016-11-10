@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        function setup() {
+            createCanvas(600, 600)
+            
+            }
+
+        
+
+        function mouseDragged() {
+             background(random(0,200))
+             strokeWeight(2)
+             
+             stroke(random(0,254), random(0, 254), random(0, 254))//color
+             
+             line(0,600,mouseX,mouseY)//left lower corner
+             
+             line(600,0,mouseX,mouseY)//right top corner
+             
+             line(0,0,mouseX,mouseY)//left top corner
+             
+             line(600,600,mouseX,mouseY)//right lower corner
+             
+             line(0,300,mouseX,mouseY)//top middle
+             
+             line(600,300,mouseX,mouseY)//bottom middle
+             
+             line(300,0,mouseX,mouseY)//left middle
+             
+             line(300,600,mouseX,mouseY)//right middle
+             
+           
+            triangle(mouseX - 10, mouseY - 10, mouseX + 90, mouseY - 80, mouseX + 80, mouseY + 50)// right side
+            triangle(mouseX - 10, mouseY - 10, mouseX + 80, mouseY - 100, mouseX - 100, mouseY - 100)//top side
+            triangle(mouseX - 10, mouseY - 10, mouseX - 100, mouseY - 80, mouseX - 100, mouseY + 50)//left side
+            triangle(mouseX + 60, mouseY + 100, mouseX - 10, mouseY - 10, mouseX - 80, mouseY + 90)//bottom side
+
+        }
+
+        function keyPressed() {
+            background(random(200))
+            stroke(random(0,254), random(0, 254), random(0, 254))//color
+            //head
+            fill(random(0,254),random(0,254),random(0,254))//color
+            ellipse(300,300,400,400)
+           
+            //left eye
+            fill(random(0,254),random(0,254),random(0,254))//color
+            ellipse(200,250,70,70)
+            
+           //right eye
+            fill(random(0,254),random(0,254),random(0,254))//color
+            ellipse(400,250,70,70)
+            
+            //nose
+            fill(random(0,254),random(0,254),random(0,254))//color
+            ellipse(300,300,20,20)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/kaceym5669/p5js/blob/gh-pages/interaction-project.html?footer=0"></script>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+</html>
